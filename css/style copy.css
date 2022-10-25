@@ -1,0 +1,146 @@
+:root{
+    --clr-primary: #FFD500;
+    --clr-bg-primary: #005BBB;
+    --clr-onfocus: #fff;
+    --clr-bg: #141414;
+    --clr-navbar: #191970;
+    --clr-navbar-onhover: #46468c;
+    --clr-bg-text: #003f82;
+    scrollbar-width: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    transition: 300ms ease;
+    outline: none;
+}
+
+html{
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+    color: var(--clr-primary);
+    background-color: var(--clr-bg-primary);
+    /*overflow-y: hidden;*/
+}
+
+table {
+    border-collapse: collapse; /*needed to remove table borders*/
+}
+
+li {
+    list-style: none;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover, :focus{
+    color: var(--clr-onfocus);
+}
+
+/* Main page */
+
+.container{
+    width: 100%;
+    height: 100%;
+}
+
+.container table tr th {
+    width: 50vw;
+    font-size: 3vw;
+}
+
+.container table tr th div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 102%;
+    height: 50vh;
+}
+
+.container table tr th .link:hover{
+    background-size: 120%;
+}
+
+.container table tr th .link:hover > a{
+    background-color: var(--clr-bg-primary);
+}
+
+.container table tr th .kyiv{
+    background-image: url("../images/kiev.jpg");
+}
+
+.container table tr th .kharkiv{
+    background-image: url("../images/kharkiv.jpg");
+}
+
+.container table tr th .odesa{
+    background-image: url("../images/odesa.jpg");
+}
+
+.container table tr th .dnipro{
+    background-image: url("../images/dnipro.jpg");
+}
+
+/* Kyiv page */
+
+#kyiv{
+    background-color: var(--clr-bg);
+}
+
+#kyiv .container{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#kyiv .container .table{ height: 100vh; }
+
+#kyiv .container .table .link > a{ background: var(--clr-bg); }
+
+#kyiv .container .table .link:hover > a{ background: var(--clr-bg-primary); }
+
+
+#kyiv .container .table .center{ background-image: url("../images/kyiv/kyiv_center.jpg"); }
+
+#kyiv .container .table .history{ background-image: url("../images/kyiv/kyiv_history.jpg"); }
+
+#kyiv .container .table .culture{ background-image: url("../images/kyiv/kyiv_culture.jpg"); }
+
+#kyiv .container .table .return{ background-image: url("../images/kyiv/kyiv_geography.jpg"); }
+
+#kyiv .container .info{
+    height: 100vh;
+    width: 100%;
+}
+
+#kyiv .container .info .wrapper{
+    height: 70%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+
+#kyiv .container .info .wrapper div{
+    height: 100%;
+    flex-direction: column;
+    padding: 2.5rem;
+}
+
+#kyiv .container #center .a{
+    
+}
+
+#kyiv .container #center .b{
+    
+}

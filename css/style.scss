@@ -1,0 +1,254 @@
+/* Testing of this website has been done with Firefox. Funcionability on other browsers has not been checked. */
+
+:root{
+    --clr-primary: #FFD500;
+    --clr-bg-primary: #005BBB;
+    --clr-onfocus: #fff;
+    --clr-bg: #141414;
+    --clr-gradient-1: #AC3F19;
+    --clr-gradient-2: #D8BF17;
+    --clr-text-kharkiv: #EE9090;
+    --clr-text-odesa: #AACA95;
+    --clr-text-dnipro: #3C77D7;
+    scrollbar-width: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@mixin text-gradient ($color1, $color2){
+
+    .info{
+        h1{
+            background-image: linear-gradient(to right, var($color1), var($color2));
+        }
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    transition: 300ms ease;
+    outline: none;
+}
+
+html{
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+    color: var(--clr-primary);
+    background-color: var(--clr-bg);
+    /*overflow-y: hidden;*/
+}
+
+table {
+    border-collapse: collapse; /*needed to remove table borders*/
+}
+
+li {
+    list-style: none;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+
+    &:hover{
+        color: var(--clr-onfocus);
+    }
+
+    &:focus{
+        color: var(--clr-onfocus);
+    }
+}
+
+.table{
+    width: 100%;
+    height: 100%;
+
+    th {
+        width: 50vw;
+        font-size: 3vw;
+
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 102%;
+            height: 50vh;
+        }
+
+        .link{
+
+            &> a{
+                background: var(--clr-bg);
+            }
+
+            &:hover{
+                background-size: 120%;
+
+                &> a{
+                    background: var(--clr-bg-primary);
+                }
+            }
+        }
+    }
+}
+
+.info{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+        h1{
+        text-align: center;
+        font-size: 3em;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    p,a{
+        margin: 1.5em;
+    }
+
+    .wrapper{
+        height: 80%;
+        width: 70%;    
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+
+        a{
+            font-weight: bold;
+            
+            &:hover{
+                background-color: var(--clr-bg-primary);
+            }
+        }
+        
+        .descriptor{
+            margin: 2rem;
+        }
+
+        .image{
+            border-radius: 1.5rem;
+            background-size: cover;
+        }
+    }
+
+    .center{ grid-template-columns: 3fr 2fr; }
+    .history{ grid-template-columns: 2fr 3fr; }
+    .culture{ grid-template-columns: 3fr 2fr; }
+}
+
+#index{
+
+    .kyiv{ background-image: url("../images/kiev.jpg"); }
+
+    .kharkiv{ background-image: url("../images/kharkiv.jpg"); }
+
+    .odesa{ background-image: url("../images/odesa.jpg"); }
+
+    .dnipro{ background-image: url("../images/dnipro.jpg"); }
+}
+
+#kyiv{
+
+    @include text-gradient(--clr-gradient-1,--clr-gradient-2);
+
+    /* background images for the table */
+
+    .table-center{ background-image: url("../images/kyiv/kyiv_center.jpg"); }
+
+    .table-history{ background-image: url("../images/kyiv/kyiv_history.jpg"); }
+
+    .table-culture{ background-image: url("../images/kyiv/kyiv_culture.jpg"); }
+
+    .table-return{ background-image: url("../images/kyiv/kyiv_geography.jpg"); }
+
+    /*background images for the various info divs*/
+
+    .center-image{ background-image: url("../images/kyiv/kyiv_geography.jpg"); }
+
+    .history-image{ background-image: url("../images/kyiv/kyiv_history.jpg"); }
+
+    .culture-image{ background-image: url("../images/kyiv/kyiv_culture.jpg"); }
+}
+
+#kharkiv{
+
+    @include text-gradient(--clr-gradient-1,--clr-text-kharkiv);
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--clr-text-kharkiv);
+
+    /* background images for the table */
+
+    .table-center{ background-image: url("../images/kharkiv/kharkiv_center.jpg"); }
+
+    .table-history{ background-image: url("../images/kharkiv/kharkiv_history.jpg"); }
+
+    .table-culture{ background-image: url("../images/kharkiv/kharkiv_culture.jpg"); }
+
+    .table-return{ background-image: url("../images/kharkiv/kharkiv_geography.jpg"); }
+
+    /*background images for the various info divs*/
+
+    .center-image{ background-image: url("../images/kharkiv/kharkiv_geography.jpg"); }
+
+    .history-image{ background-image: url("../images/kharkiv/kharkiv_history.jpg"); }
+
+    .culture-image{ background-image: url("../images/kharkiv/kharkiv_culture.jpg"); }
+}
+
+#odesa{
+
+    @include text-gradient(--clr-gradient-1,--clr-text-odesa);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--clr-text-odesa);
+
+    /* background images for the table */
+
+    .table-center{ background-image: url("../images/odesa/odesa_center.jpg"); }
+
+    .table-history{ background-image: url("../images/odesa/odesa_history.jpg"); }
+
+    .table-culture{ background-image: url("../images/odesa/odesa_culture.jpg"); }
+
+    .table-return{ background-image: url("../images/odesa/odesa_geography.jpg"); }
+
+    /*background images for the various info divs*/
+
+    .center-image{ background-image: url("../images/odesa/odesa_geography.jpg"); }
+
+    .history-image{ background-image: url("../images/odesa/odesa_history.jpg"); }
+
+    .culture-image{ background-image: url("../images/odesa/odesa_culture.jpg"); }
+}
+
+#dnipro{
+
+    @include text-gradient(--clr-gradient-1,--clr-text-dnipro);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--clr-text-dnipro);
+
+    /* background images for the table */
+
+    .table-center{ background-image: url("../images/dnipro/dnipro_center.jpg"); }
+
+    .table-history{ background-image: url("../images/dnipro/dnipro_history.jpg"); }
+
+    .table-culture{ background-image: url("../images/dnipro/dnipro_culture.jpg"); }
+
+    .table-return{ background-image: url("../images/dnipro/dnipro_geography.jpg"); }
+
+    /*background images for the various info divs*/
+
+    .center-image{ background-image: url("../images/dnipro/dnipro_geography.jpg"); }
+
+    .history-image{ background-image: url("../images/dnipro/dnipro_history.jpg"); }
+
+    .culture-image{ background-image: url("../images/dnipro/dnipro_culture.jpg"); }
+}
